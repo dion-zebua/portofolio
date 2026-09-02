@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     header("Location: /404", true, 302);
 }
 
-$domain = "https://dionzebua.com/";
+$domain = "https://dionzebua.com";
 // $domain = "https://dionzebua.com.test";
 $name = "Dion Zebua";
 $fullname = "Dion Elson Famahato Zebua";
