@@ -1,0 +1,20 @@
+Options -Indexes
+RewriteEngine On
+
+ErrorDocument 404 /view/404.php
+
+# Jika user mengetik domain.com/index -> Diubah ke domain.com/
+RewriteCond %{THE_REQUEST} \s/index[\s?] [NC]
+RewriteRule ^index$ / [R=301,L]
+
+# HANDLE ROOT DOMAIN (domain.com/ -> view/index.php)
+RewriteRule ^$ view/index.php [L]
+
+# User ketik: domain.com/about -> Apache panggil: view/about.php
+RewriteCond %{DOCUMENT_ROOT}/view/$1.php -f
+RewriteRule ^([^/]+)$ view/$1.php [L]
+
+# Blokir file tersembunyi
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
