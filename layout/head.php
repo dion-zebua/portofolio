@@ -41,11 +41,11 @@ $fullUrl = "https://" . $_SERVER['HTTP_HOST'] . $path;
     <meta property="og:image" content="<?= $meta["img"]; ?>" />
 
     <!-- ICON -->
-    <link rel="apple-touch-icon" href="<?= $meta["img"]; ?>" />
-    <link rel="icon" size="16x16" href="<?= $meta["img"]; ?>" />
-    <link rel="icon" size="32x32" href="<?= $meta["img"]; ?>" />
-    <link rel="icon" size="180x180" href="<?= $meta["img"]; ?>" />
-    <link rel="shortcut icon" href="<?= $meta["img"]; ?>" />
+    <link rel="apple-touch-icon" href="<?= $foto; ?>" />
+    <link rel="icon" size="16x16" href="<?= $foto; ?>" />
+    <link rel="icon" size="32x32" href="<?= $foto; ?>" />
+    <link rel="icon" size="180x180" href="<?= $foto; ?>" />
+    <link rel="shortcut icon" href="<?= $foto; ?>" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:site_name" content="<?= $meta["title"]; ?>" />
     <link rel="canonical" href="<?= $fullUrl ?>" />
