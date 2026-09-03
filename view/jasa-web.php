@@ -9,21 +9,47 @@ require_once ABSPATH . '/config.php';
 $meta = [
     "title" => "$title - $name",
     "desc" => "$desc - $name",
-    "img" => "$domain/jasa-web.jpeg",
+    "img" => "$domain/img/jasa-web.jpeg",
 ];
 
-// $url = "https://sheets.googleapis.com/v4/spreadsheets/1kh6_KP0VPCiHMuFTQiNS0TwEsXPzHvxHghcY6hp_-P0/values/Domain!A:E?key=AIzaSyAkjLLGuoaJ0IkFQTSlxsLH2mhI1Rl6kVc";
+$apiUrl = "https://script.google.com/macros/s/AKfycbwbPMymcZ7SlRgEjTy6Z_QHbxps_hSuLUyNOhkmBp5ARBv2WiW_w4U6XvdgCaVhdqfq/exec";
 
-// $ch = curl_init();
-// curl_setopt($ch, CURLOPT_URL, $url);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+try {
+    $ch = curl_init($apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
 
-// $result = curl_exec($ch);
-// // curl_close($ch);
-// $client = json_decode($result, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curlError = curl_error($ch);
+
+    curl_close($ch);
+
+    if ($response === false || !empty($curlError)) {
+        throw new Exception("cURL Error: " . $curlError);
+    }
+
+    if ($httpCode !== 200) {
+        throw new Exception("API Error: Server mengembalikan HTTP Code " . $httpCode);
+    }
+
+    $data = json_decode($response, true);
+
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception("Gagal melakukan decode JSON.");
+    }
+
+    if (isset($data["values"])) {
+        unset($data["values"][0]);
+    }
+} catch (Exception $e) {
+    $data["values"][0] = "Terjadi kesalahan: " . $e->getMessage();
+}
 
 require_once ABSPATH . '/layout/head.php';
-
 
 
 ?>
@@ -85,7 +111,7 @@ require_once ABSPATH . '/layout/head.php';
                 </div>
             </div>
             <div class="relative">
-                <img onclick="window.open('<?= $domain ?>/jasa-web.jpeg')" class="cursor-pointer invert rounded-lg" src="<?= $domain ?>/jasa-web.jpeg" alt="Harga <?= $title ?>">
+                <img onclick="window.open('<?= $meta['img'] ?>')" class="cursor-pointer invert rounded-lg" src="<?= $meta['img'] ?>" alt="Harga <?= $title ?>">
             </div>
         </div>
         <div class="h-32 md:h-40"></div>
@@ -98,14 +124,27 @@ require_once ABSPATH . '/layout/head.php';
                 <h2 class="text-4xl font-bold">Contoh Web Yang Telah Dikembangkan</h2>
                 <div class="h-6"></div>
                 <p class="text-xl text-gray-400 md:pr-10">
-                    Berpengalaman membangun lebih dari <span id="jumlahWeb">195</span>+ sistem digital, mulai dari landing page perusahaan, travel, toko online,
+                    Berpengalaman membangun lebih dari
+                    <span id="jumlahWeb"><?= ($httpCode != 200) ? 195 : (count($data["values"]) - 1) ?></span>+ sistem digital, mulai dari landing page perusahaan, travel, toko online,
                     hingga dashboard manajemen umrah.
                 </p>
                 <div class="h-8"></div>
 
             </div>
             <ul id="domain-list" class="rounded-lg bg-gradient-to-br from-gray-900 to-black grid sm:grid-cols-2 lg:grid-cols-3 gap-4 p-5 border-t border-gray-800 md:col-span-full">
-                <li id="loading-state" class="text-gray-500 animate-pulse">Memuat data domain...</li>
+                <?php if ($httpCode != 200): ?>
+                    <li class="text-sm md:text-base"><?= $data["values"][0] ?></li>
+
+                <?php else: ?>
+                    <?php foreach ($data["values"] as $key => $value) : ?>
+                        <li class="flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-blue-500">•</span>
+                            <a class="hover:underline" href="https://<?= str_replace(' ', '?', $value) ?>" target="_blank">
+                                <?= $value ?>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                <?php endif; ?>
             </ul>
 
         </div>
@@ -114,53 +153,4 @@ require_once ABSPATH . '/layout/head.php';
     </div>
 </main>
 
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const apiUrl = "https://script.google.com/macros/s/AKfycbwbPMymcZ7SlRgEjTy6Z_QHbxps_hSuLUyNOhkmBp5ARBv2WiW_w4U6XvdgCaVhdqfq/exec";
-        const ulContainer = document.getElementById("domain-list");
-        const loadingState = document.getElementById("loading-state");
-        const jumlahWeb = document.getElementById("jumlahWeb");
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Hapus teks loading
-
-                jumlahWeb.innerHTML = data.values.length
-
-                if (loadingState) loadingState.remove();
-
-                const rows = data.values || [];
-
-                // Jika mau lewati baris pertama/Header (sama seperti array_slice(..., 1))
-                const listData = rows.slice(1);
-
-                if (listData.length === 0) {
-                    ulContainer.innerHTML = '<li class="text-gray-500">Data kosong.</li>';
-                    return;
-                }
-
-                // Looping data Kolom A ke dalam <li>
-                listData.forEach(item => {
-                    const li = document.createElement("li");
-                    li.className = "flex items-center gap-2 text-sm md:text-base";
-                    li.innerHTML = `
-                    <span class="text-blue-500">•</span>
-                    <a class="hover:underline" href="https://${item.trim().replace(/ /g, '?')}" target="_blank">${item}</a>
-                `;
-                    ulContainer.appendChild(li);
-                });
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-                if (loadingState) {
-                    loadingState.textContent = "Gagal memuat data.";
-                    loadingState.classList.replace("text-gray-500", "text-red-400");
-                    loadingState.classList.remove("animate-pulse");
-                }
-            });
-    });
-</script>
 <?php require_once ABSPATH . '/layout/footer.php'; ?>

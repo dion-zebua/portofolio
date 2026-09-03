@@ -9,7 +9,7 @@ require_once ABSPATH . '/config.php';
 $meta = [
     "title" => "$title - $name",
     "desc" => "$desc - $name",
-    "img" => "$domain/jasa-iklan.webp",
+    "img" => "$domain/img/jasa-iklan.webp",
 ];
 
 require_once ABSPATH . '/layout/head.php';
@@ -80,7 +80,7 @@ require_once ABSPATH . '/layout/head.php';
                 </div>
             </div>
             <div>
-                <img onclick="window.open('<?= $domain ?>/jasa-iklan.webp')" class="cursor-pointer invert rounded-lg" src="<?= $domain ?>/jasa-iklan.webp" alt="Harga <?= $title ?>">
+                <img onclick="window.open('<?= $meta['img'] ?>')" class="cursor-pointer invert rounded-lg" src="<?= $meta['img'] ?>" alt="Harga <?= $title ?>">
             </div>
         </div>
         <div class="h-32 md:h-40"></div>
@@ -103,18 +103,12 @@ require_once ABSPATH . '/layout/head.php';
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper ">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img class="rounded invert" src="<?= $domain ?>/1.jpeg" alt="Contoh Iklan">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="rounded invert" src="<?= $domain ?>/2.jpeg" alt="Contoh Iklan">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="rounded invert" src="<?= $domain ?>/3.jpeg" alt="Contoh Iklan">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="rounded invert" src="<?= $domain ?>/4.jpeg" alt="Contoh Iklan">
-                    </div>
+                    <?php for ($i = 1; $i <= 4; $i++) : ?>
+                        <figure class="swiper-slide">
+                            <img class="rounded invert" src='<?= "$domain/img/ads/$i.jpeg" ?>' alt="Contoh Iklan">
+                            <figcaption class="text-sm text-center text-slate-400">Contoh Iklan ke-<?= $i ?></figcaption>
+                        </figure>
+                    <?php endfor; ?>
                 </div>
 
                 <div class="swiper-button-prev"></div>

@@ -1,27 +1,17 @@
 <?php
 define('ABSPATH', dirname(__DIR__));
 
-$title = "Jual Beli Paypal";
-$desc = "Jual beli paypal murah, terpercaya dan tanpa biaya admin.";
+$title = "Jual Beli Saldo Paypal";
+$desc = "Jual beli Saldo paypal murah, terpercaya dan tanpa biaya admin.";
 
 require_once ABSPATH . '/config.php';
 
 $meta = [
     "title" => "$title - $name",
     "desc" => "$desc - $name",
-    "img" => "$domain/jual-beli-paypal.webp",
+    "img" => "$domain/img/jual-beli-paypal.webp",
 
 ];
-
-// $url = "https://sheets.googleapis.com/v4/spreadsheets/1kh6_KP0VPCiHMuFTQiNS0TwEsXPzHvxHghcY6hp_-P0/values/Domain!A:E?key=AIzaSyAkjLLGuoaJ0IkFQTSlxsLH2mhI1Rl6kVc";
-
-// $ch = curl_init();
-// curl_setopt($ch, CURLOPT_URL, $url);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// $result = curl_exec($ch);
-// // curl_close($ch);
-// $client = json_decode($result, true);
 
 $topUp = [
     [1, 9.99, 18500],
@@ -109,7 +99,7 @@ require_once ABSPATH . '/layout/head.php';
                 </div>
             </div>
             <div class="relative">
-                <img onclick="window.open('<?= $domain ?>/jual-beli-paypal.webp')" class="cursor-pointer rounded-lg" src="<?= $domain ?>/jual-beli-paypal.webp" alt="Harga <?= $title ?>">
+                <img onclick="window.open('<?= $meta['img'] ?>')" class="cursor-pointer rounded-lg" src="<?= $meta['img'] ?>" alt="Harga <?= $title ?>">
             </div>
         </div>
         <div class="h-32 md:h-40"></div>
