@@ -17,9 +17,9 @@ $service = [
     <div class="text-gray-300 container mx-auto p-8 md:p-10 lg:p-12 overflow-hidden md:rounded-lg ">
 
 
-        <p class=" text-4xl font-bold text-gray-200 max-w-5xl lg:text-7xl lg:pr-24 md:text-6xl">
+        <h1 class=" text-4xl font-bold text-gray-200 max-w-5xl lg:text-7xl lg:pr-24 md:text-6xl">
             Halo, saya <?= $name ?>
-        </p>
+        </h1>
         <div class="h-10"></div>
         <p class="max-w-2xl  text-xl text-gray-400 md:text-2xl [&_span]:bg-slate-100/10 [&_span]:text-xl [&_span]:border [&_span]:border-slate-700 [&_span]:rounded [&_span]:whitespace-nowrap">
             Simple web <?= $fullname ?>. Menawarkan <span>&nbsp;jasa web&nbsp;</span>, <span>&nbsp;jasa iklan&nbsp;</span>, dan <span>&nbsp;jual beli saldo Paypal&nbsp;</span>.
@@ -57,7 +57,7 @@ $service = [
                     </p>
                     <div class="h-6"></div>
                     <p class="text-3xl"><?= $value[0] ?></p>
-                    <a class="hover:[&_svg]:ml-2 mt-5 ml-auto inline-flex text-slate-300 p-2 rounded border border-slate-500/20" href="<?= $value[1] ?>">
+                    <a title="<?= $value[0] ?>" aria-label="<?= $value[0] ?>" class="hover:[&_svg]:ml-2 mt-5 ml-auto inline-flex text-slate-300 p-2 rounded border border-slate-500/20" href="<?= $value[1] ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-4 w-4 bi bi-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                         </svg>

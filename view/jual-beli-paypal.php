@@ -39,9 +39,9 @@ require_once ABSPATH . '/layout/head.php';
     <div class="text-gray-300 container mx-auto p-8 md:p-10 lg:p-12 overflow-hidden md:rounded-lg ">
 
 
-        <p class=" text-4xl font-bold text-gray-200 max-w-5xl lg:text-7xl lg:pr-24 md:text-6xl">
+        <h1 class=" text-4xl font-bold text-gray-200 max-w-5xl lg:text-7xl lg:pr-24 md:text-6xl">
             <?= $title ?>
-        </p>
+        </h1>
         <div class="h-10"></div>
         <p class="max-w-2xl  text-xl text-gray-400 md:text-2xl [&_span]:bg-slate-100/10 [&_span]:text-lg [&_span]:border [&_span]:border-slate-700 [&_span]:rounded [&_span]:whitespace-nowrap">
             <?= $desc ?>
@@ -99,7 +99,7 @@ require_once ABSPATH . '/layout/head.php';
                 </div>
             </div>
             <div class="relative">
-                <img onclick="window.open('<?= $meta['img'] ?>')" class="cursor-pointer rounded-lg" src="<?= $meta['img'] ?>" alt="Harga <?= $title ?>">
+                <img loading="lazy" onclick="window.open('<?= $meta['img'] ?>')" class="cursor-pointer rounded-lg" src="<?= $meta['img'] ?>" alt="Harga <?= $title ?>">
             </div>
         </div>
         <div class="h-32 md:h-40"></div>

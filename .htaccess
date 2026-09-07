@@ -18,3 +18,13 @@ RewriteRule ^([^/]+)$ view/$1.php [L]
 <FilesMatch "^\.">
     Require all denied
 </FilesMatch>
+
+# CACHE 1 TAHUN
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=31536000, public"
+</IfModule>
