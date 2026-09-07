@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 $domain = "https://dionzebua.com";
-$domain = "https://dionzebua.com.test";
+// $domain = "https://dionzebua.com.test";
 $name = "Dion Zebua";
 $fullname = "Dion Elson Famahato Zebua";
 $foto = "$domain/img/profil.jpg";
