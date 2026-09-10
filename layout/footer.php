@@ -1,6 +1,6 @@
 <?php
 if (!defined('ABSPATH')) {
-    header("Location: /404", true, 302);
+    header("Location: /404", true, 301);
 }
 
 
@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
         <li><a href="<?= $domain ?>">Beranda</a></li>
         <li><a href="<?= $domain ?>/jasa-web">Jasa Web</a></li>
         <li><a href="<?= $domain ?>/jasa-iklan">Jasa Iklan</a></li>
-        <li><a href="<?= $domain ?>/jual-beli-paypal">Jual Beli Paypal</a></li>
+        <li><a href="<?= $domain ?>/jual-beli-saldo-paypal">Jual Beli Saldo Paypal</a></li>
     </ul>
 
     <ul class="md:col-span-1 space-y-2 text-gray-400 [&_a]:hover:underline">

@@ -39,12 +39,12 @@ require_once ABSPATH . '/layout/head.php';
         <div class="flex gap-6">
 
             <a target="_blank" href="<?= $whatsapp ?>"
-                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-none focus:shadow-outline bg-gradient-to-b from-indigo-900 hover:from-gray-900 to-black ">
+                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 bg-gradient-to-b from-indigo-900 hover:from-gray-900 to-black ">
                 Whatsapp
             </a>
 
             <a href="#harga-dan-contoh"
-                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-none focus:shadow-outline bg-gradient-to-b hover:from-indigo-900 from-gray-900 to-black">
+                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 bg-gradient-to-b hover:from-indigo-900 from-gray-900 to-black">
                 Harga & Contoh
             </a>
         </div>
@@ -63,15 +63,15 @@ require_once ABSPATH . '/layout/head.php';
                 <div class="h-8"></div>
                 <div class="grid grid-cols-2 gap-4 pt-8 border-t border-gray-800">
                     <div>
-                        <p class="font-semibold text-gray-400">Riset & Strategi
-                        </p>
+                        <h3 class="font-semibold text-gray-400">Riset & Strategi
+                        </h3>
                         <div class="h-4"></div>
                         <p class="text-gray-400">
                             Melakukan riset keyword, konten iklan, dan budget untuk bisnis anda.
                         </p>
                     </div>
                     <div>
-                        <p class="font-semibold text-gray-400">Biaya Jasa Termurah</p>
+                        <h3 class="font-semibold text-gray-400">Biaya Jasa Termurah</h3>
                         <div class="h-4"></div>
                         <p class="text-gray-400">
                             Terdapat banyak pilihan paket dengah harga terjangkau dan bisa saldo isi sendiri.
@@ -111,8 +111,8 @@ require_once ABSPATH . '/layout/head.php';
                     <?php endfor; ?>
                 </div>
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev outline-none focus:[&_svg]:stroke-white focus:[&_svg]:stroke-[1] focus:[&_svg]:[paint-order:stroke_fill]"></div>
+                <div class="swiper-button-next outline-none focus:[&_svg]:stroke-white focus:[&_svg]:stroke-[1] focus:[&_svg]:[paint-order:stroke_fill]"></div>
 
 
                 <div class="swiper-pagination"></div>

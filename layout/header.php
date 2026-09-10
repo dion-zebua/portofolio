@@ -1,6 +1,6 @@
 <?php
 if (!defined('ABSPATH')) {
-    header("Location: /404", true, 302);
+    header("Location: /404", true, 301);
 }
 
 ?>
@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     <div class="flex justify-between">
         <a href="<?= $domain ?>" class="z-[10] text-3xl font-bold"><?= $name ?></a>
         <a id="menuButton" href="#!"
-            class="z-[10] self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-none focus:shadow-outline bg-gradient-to-b hover:from-indigo-500 from-gray-900 to-black">
+            class="z-[10] self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 bg-gradient-to-b hover:from-indigo-500 from-gray-900 to-black">
             Open Menu
         </a>
     </div>
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
             <li><a href="<?= $domain ?>">Beranda</a></li>
             <li><a href="<?= $domain ?>/jasa-web">Jasa Web</a></li>
             <li><a href="<?= $domain ?>/jasa-iklan">Jasa Iklan</a></li>
-            <li><a href="<?= $domain ?>/jual-beli-paypal">Jual Beli Paypal</a></li>
+            <li><a href="<?= $domain ?>/jual-beli-saldo-paypal">Jual Beli Saldo Paypal</a></li>
         </ul>
     </nav>
 </header>

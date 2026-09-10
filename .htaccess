@@ -14,6 +14,11 @@ RewriteRule ^$ view/index.php [L]
 RewriteCond %{DOCUMENT_ROOT}/view/$1.php -f
 RewriteRule ^([^/]+)$ view/$1.php [L]
 
+
+Redirect 301 /jual-beli-paypal /jual-beli-saldo-paypal
+
+
+
 # Blokir file tersembunyi
 <FilesMatch "^\.">
     Require all denied

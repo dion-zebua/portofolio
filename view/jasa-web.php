@@ -82,12 +82,12 @@ require_once ABSPATH . '/layout/head.php';
         <div class="flex gap-6">
 
             <a target="_blank" href="<?= $whatsapp ?>"
-                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-none focus:shadow-outline bg-gradient-to-b from-indigo-900 hover:from-gray-900 to-black ">
+                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 bg-gradient-to-b from-indigo-900 hover:from-gray-900 to-black ">
                 Whatsapp
             </a>
 
             <a href="#harga-dan-contoh"
-                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-none focus:shadow-outline bg-gradient-to-b hover:from-indigo-900 from-gray-900 to-black">
+                class="inline-flex mt-8 self-start p-3 leading-none text-gray-200 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 bg-gradient-to-b hover:from-indigo-900 from-gray-900 to-black">
                 Harga & Contoh
             </a>
         </div>
@@ -106,14 +106,14 @@ require_once ABSPATH . '/layout/head.php';
                 <div class="h-8"></div>
                 <div class="grid grid-cols-2 gap-4 pt-8 border-t border-gray-800">
                     <div>
-                        <p class="font-semibold text-gray-400">Bisa Request Fitur</p>
+                        <h3 class="font-semibold text-gray-400">Bisa Request Fitur</h3>
                         <div class="h-4"></div>
                         <p class="text-gray-400">
                             Website bisa disesuaikan dengan kebutuhan bisnis anda.
                         </p>
                     </div>
                     <div>
-                        <p class="font-semibold text-gray-400">Include Google Ads</p>
+                        <h3 class="font-semibold text-gray-400">Include Google Ads</h3>
                         <div class="h-4"></div>
                         <p class="text-gray-400">
                             Include pembuatan iklan untuk meningkatkan prospek bisnis.

@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('ABSPATH')) {
-    header("Location: /404", true, 302);
+    header("Location: /404", true, 301);
 }
 
 require_once ABSPATH . '/config.php';
