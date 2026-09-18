@@ -3,6 +3,9 @@ RewriteEngine On
 
 ErrorDocument 404 /view/404.php
 
+# Semua /r/{kode} masuk ke redirect.php
+RewriteRule ^r/([^/]+)/?$ view/redirect.php?urlRedirect=$1 [L,QSA]
+
 # Jika user mengetik domain.com/index -> Diubah ke domain.com/
 RewriteCond %{THE_REQUEST} \s/index[\s?] [NC]
 RewriteRule ^index$ / [R=301,L]

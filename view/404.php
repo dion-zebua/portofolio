@@ -1,6 +1,7 @@
 <?php
 define('ABSPATH', dirname(__DIR__));
 
+http_response_code(404);
 
 $meta = [
     'title' => 'Halaman 404',
