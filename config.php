@@ -12,3 +12,4 @@ $whatsapp = "https://api.whatsapp.com/send/?phone=6288289317870&text=Halo+Dion%2
 $instagram = "https://www.instagram.com/papyon_n/";
 $tiktok = "https://www.tiktok.com/@dionpengenjadiprogrammer";
 $github = "https://github.com/dion-zebua";
+$facebook = "https://www.facebook.com/sayadionzebua";

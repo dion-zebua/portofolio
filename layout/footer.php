@@ -27,10 +27,11 @@ if (!defined('ABSPATH')) {
 
     <ul class="md:col-span-1 space-y-2 text-gray-400 [&_a]:hover:underline">
         <li class="pb-4 text-gray-200">Kontak</li>
-        <li><a rel="noopener noreferrer nofollow" target="_blank" href="<?= $whatsapp ?>">Whatsapp</a></li>
-        <li><a rel="noopener noreferrer nofollow" target="_blank" href="<?= $instagram ?>">Instagram</a></li>
-        <li><a rel="noopener noreferrer nofollow" target="_blank" href="<?= $tiktok ?>">Tiktok</a></li>
-        <li><a rel="noopener noreferrer nofollow" target="_blank" href="<?= $github ?>">Github</a></li>
+        <li><a rel="noopener" target="_blank" href="<?= $whatsapp ?>">Whatsapp</a></li>
+        <li><a rel="noopener" target="_blank" href="<?= $instagram ?>">Instagram</a></li>
+        <li><a rel="noopener" target="_blank" href="<?= $tiktok ?>">Tiktok</a></li>
+        <li><a rel="noopener" target="_blank" href="<?= $github ?>">Github</a></li>
+        <li><a rel="noopener" target="_blank" href="<?= $facebook ?>">Facebook</a></li>
     </ul>
 
     <div class="h-12 col-span-full">
