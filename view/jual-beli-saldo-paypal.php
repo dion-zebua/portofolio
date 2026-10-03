@@ -136,15 +136,16 @@ require_once ABSPATH . '/layout/head.php';
                     <div>
                         <label for="nominal">Nominal Paypal</label>
                         <div class="relative">
-                            <input type="number" name="nominal" required min="1" max="100" disabled id="nominal" class="p-2 px-5 leading-none font-semibold text-gray-300 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 focus:shadow-outline disabled:bg-slate-900! disabled:cursor-not-allowed w-full">
+                            <input step="0.01" inputmode="decimal" type="number" name="nominal" required min="1" max="200" disabled id="nominal" class="p-2 px-5 leading-none font-semibold text-gray-300 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 focus:shadow-outline disabled:bg-slate-900! disabled:cursor-not-allowed w-full">
                             <div class="absolute top-1/2 left-2 -translate-y-1/2">$</div>
                         </div>
+                        <span class="text-sm text-red-300">Note: Jika tidak bisa pakai koma, pakai titik.</span>
                     </div>
 
                     <div>
                         <label for="totalCost">Total Biaya</label>
                         <div class="relative">
-                            <input type="number" required name="nominal" min="1" max="100" disabled id="totalCost" class="p-2 px-5 pl-8! leading-none font-semibold text-gray-300 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 focus:shadow-outline bg-slate-900 cursor-not-allowed w-full">
+                            <input step="0.01" inputmode="decimal" type="number" required name="nominal" min="1" max="200" disabled id="totalCost" class="p-2 px-5 pl-8! leading-none font-semibold text-gray-300 border border-gray-800 rounded-lg focus:outline-2 focus:outline-indigo-900 focus:shadow-outline bg-slate-900 cursor-not-allowed w-full">
                             <div class="absolute top-1/2 left-2 -translate-y-1/2">Rp</div>
                         </div>
                     </div>
@@ -212,7 +213,6 @@ require_once ABSPATH . '/layout/head.php';
     transcationNominal.addEventListener('input', () => {
         const total = count(transcationNominal.value)
         totalCost.value = total
-
     })
 
 
