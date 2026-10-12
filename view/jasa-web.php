@@ -12,6 +12,11 @@ $meta = [
     "img" => "$domain/img/jasa-web.jpeg",
 ];
 
+if (!file_exists(ABSPATH . '\rute.json')) {
+    touch(ABSPATH . '\rute.json'
+    );
+}
+
 if (isset($_GET['hit'])) {
     $apiUrl = "https://script.google.com/macros/s/AKfycbwbPMymcZ7SlRgEjTy6Z_QHbxps_hSuLUyNOhkmBp5ARBv2WiW_w4U6XvdgCaVhdqfq/exec";
 
@@ -38,6 +43,7 @@ if (isset($_GET['hit'])) {
         }
         $data = json_decode($response, true);
         unset($data["values"][0]);
+
 
         file_put_contents(
             ABSPATH . '\rute.json',
@@ -126,7 +132,7 @@ require_once ABSPATH . '/layout/head.php';
             </div>
         </div>
         <div class="h-32 md:h-40"></div>
-        <div class="grid gap-8 md:grid-cols-3 scroll-mt-[200px]">
+        <div class="grid gap-8 md:grid-cols-3 scroll-mt-[200px] scroll-mt-[200px]" id="portofolio">
             <div class="flex flex-col justify-center md:col-span-2">
                 <p
                     class="self-start inline text-xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-green-600">
